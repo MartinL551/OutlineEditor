@@ -1,0 +1,152 @@
+body, html{
+  background-color: black;
+}
+
+#file:hover{
+  background-color: red;
+}
+
+#tools:hover{
+  background-color: red;
+}
+
+#options:hover{
+  background-color: red;
+}
+
+#help:hover{
+  background-color: red;
+}
+
+#fileDropdown li:hover{
+  background-color: green;
+}
+
+#fileDropdown{
+  display: none;
+  border: 1px blue;
+}
+
+
+#file:hover #fileDropdown{
+  display: block;
+}
+
+#hd{
+  display: grid;
+  background-color: grey;
+  grid-template-columns: 1fr;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+#spacer{
+  grid-area: spacer;
+  height: 10vh;
+
+}
+
+#content{
+  grid-area: content;
+}
+
+#left{
+  grid-area: left;
+  background-color: grey;
+}
+
+#right{
+  grid-area: right;
+  background-color: grey;
+}
+
+#ft{
+  grid-area: ft;
+}
+
+#page{
+  min-height: 50em;
+  height: 100%;
+  border: 1px solid blue;
+  background-color: white;
+  top: 100;
+
+}
+
+#page input{
+  width: 60%;
+  border: none;
+}
+
+input:focus{
+  background-color: purple;
+}
+
+nav, main, section, footer, li{
+  margin: 0;
+  padding: 0;
+}
+
+.grid{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+  "spacer   spacer  spacer"
+  "left content right"
+  "ft     ft      ft";
+  grid-template-columns: 1fr 90% 1fr;
+  grid-template-rows: 1fr 80% 10%;
+
+
+}
+
+nav ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "button button button button";
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+nav li, nav #file{
+  text-align: center;
+}
+
+@media only screen and (max-width: 750px){
+
+  #left, #right{
+    display: none;
+  }
+
+  nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "button button"
+    "button button";
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .grid{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+    "spacer   spacer  spacer"
+    "content content content"
+    "ft     ft      ft";
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 2fr, 80%, 1fr;
+  }
+
+
+
+}
